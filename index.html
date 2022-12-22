@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .character{
+            background-color: greenyellow;
+            height: 150px;
+            width: 80px;
+            position: absolute;
+            top:0px;
+            left:0px;
+
+        }
+
+        .deleteBtn{
+            text-align: center;
+            background-color: red;
+            border:1px solid gray;
+            padding: 10px 10px;
+            border-radius: 5px;
+            box-shadow: 7px 5px rgba(211, 9, 9, 0.87);
+
+        }
+    </style>
+</head>
+<body>
+   
+    <button class="deleteBtn">Удалить персонажей</button>
+    <script>
+   
+       
+
+        function createCharacter(top, left, name){
+            let player = document.createElement("div");
+            document.body.appendChild(player);
+            player.classList.add("character");
+            player.innerHTML = name;
+            player.style.top = top+"px";
+            player.style.left =  left+ "px";
+            return player;
+        }
+
+       let player1 =  createCharacter(200, 200, "Ася");
+       let player2 =  createCharacter(300, 300, "Света");
+        let player3 = createCharacter(400, 400, "Сюзи");
+      
+
+        let btn = document.querySelector(".deleteBtn")
+            
+        btn.onclick = function(){
+           //удалить персонажей
+           player1.remove();
+            player2.remove();
+             player3.remove();
+         
+        }
+    </script>
+</body>
+</html>
